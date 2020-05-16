@@ -8,7 +8,7 @@ import org.openqa.selenium.Alert;
 public class AlertDemo {
 	
 	public static void main(String[] args) throws NoAlertPresentException,InterruptedException  {									
-		System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 	
         
@@ -27,11 +27,13 @@ public class AlertDemo {
         String alertMessage= driver.switchTo().alert().getText();		
         		
         // Displaying alert message		
-        System.out.println(alertMessage);	
+        System.out.println(alertMessage);
+        
         Thread.sleep(5000);
         		
         // Accepting alert		
-        alert.accept();		
+        alert.accept();	
+        driver.quit();
     }	
 
 }
